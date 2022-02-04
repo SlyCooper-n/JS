@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 1</title>
+
     <style>
         body {
             color: black;
@@ -23,16 +24,17 @@
 <body>
     <div id="container-principal">
         <h1>Hello, world!</h1>
+
         <p>This is my first try at JavaScript in the web.</p>
     </div>
+
     <script>
         window.alert('My first message')
         window.confirm('Are you enjoying?') // janela com botão OK e Cancelar
+
         var name = window.prompt('What is your name?')
         window.alert('Hello, ' + name + ' !') // concatenação +
-        // (number + number) para adição
-        // (string + string) para concatenação
-        document.write('Hello, ' + name + '!') // ${} placeholder nao funciona
+        document.write(`Hello, ${name}!`) // ${} placeholder
     </script>
 </body>
 </html>
