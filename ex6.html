@@ -117,44 +117,37 @@
         }
 
         function txtResult() {
+            
+            var greatest = lista[0];
+            var small = lista[0];
+            var sum = 0;
+            var media;
 
-            if (Number(document.querySelector('#number').value) != 0) {
-                
-                var greatest = lista[0];
-                var small = lista[0];
-                var sum = 0;
-                var media;
+            for (let i = 0; i < lista.length; i++) {
 
-                for (let i = 0; i < lista.length; i++) {
+                if (greatest < lista[i]) {
 
-                    if (greatest < lista[i]) {
-
-                        greatest = lista[i];
-
-                    }
-
-                    sum += lista[i];
-                    media = sum / lista.length;
+                    greatest = lista[i];
 
                 }
 
-                for (let i in lista) {
-                    
-                    if (small > lista[i]) {
-
-                        small = lista[i];
-
-                    }   
-
-                }
-
-                txt.innerHTML += `Ao todo temos ${lista.length} números na lista. <br> O maior valor informado foi ${greatest}. <br> O menor valor informado foi ${small}. <br> Somando todos os valores, temos ${sum}. <br> A média dos valores digitados é ${media}.`
-
-            } else {
-
-                alert('Insira um número')
+                sum += lista[i];
+                media = sum / lista.length;
 
             }
+
+            for (let i in lista) {
+                
+                if (small > lista[i]) {
+
+                    small = lista[i];
+
+                }   
+
+            }
+
+            txt.innerHTML += `Ao todo temos ${lista.length} números na lista. <br> O maior valor informado foi ${greatest}. <br> O menor valor informado foi ${small}. <br> Somando todos os valores, temos ${sum}. <br> A média dos valores digitados é ${media}.`
+
 
         }
 
