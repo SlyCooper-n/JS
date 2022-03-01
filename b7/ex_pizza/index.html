@@ -11,14 +11,13 @@
 <body class="d-flex dark">
     <main>
         <h1>Pizzas</h1>
-        <button class="theme">Mudar tema</button>
+
+        <button class="theme" onclick="changeTheme()">Mudar tema</button>
 
         <div class="pizza-grid d-grid justify-content-between"></div>
 
-        <div class="pizza-cart-bg d-flex justify-content-center align-items-center">
-            <div class="pizza-cart">
-                <div class="pizza-cart-buy container-fluid d-flex"></div>
-            </div>
+        <div class="pizza-container-bg d-flex justify-content-center align-items-center">
+            <div class="pizza-container"></div>
         </div>
     </main>
 
@@ -26,7 +25,7 @@
         <div class="cart container-fluid">
             <h3>Suas pizzas</h3>
 
-            <div class="cart-pizza d-flex flex-column"></div>
+            <div class="cart-pizzas d-flex flex-column"></div>
 
             <hr>
             
@@ -52,13 +51,80 @@
                 <h3 class="total"></h3>
             </div>
 
-            <button>Finalizar a compra</button>
+            <button class="finish">Finalizar a compra</button>
         </div>
     </aside>
+
+    <div class="models d-none">
+        <div class="pizza-model">
+            <div class="pizza-img">
+                <img src="" alt="">
+            </div>
+
+            <div class="add-pizza">+</div>
+    
+            <div class="pizza-info">
+                <p class="pizza-price">R$ --</p>
+                <h2 class="pizza-name"></h2>
+                <p class="pizza-desc"></p>
+            </div>
+        </div>
+
+        <div class="pizza-container-details container-fluid d-flex">
+            <div class="pizza-photo">
+                <img src="" alt="">
+            </div>
+
+            <div class="details">
+                <h2></h2>
+
+                <p></p>
+
+                <div>Tamanho</div>
+                <div class="size d-flex justify-content-center">
+                    <div class="size-option">Pequena <span></span></div>
+                    <div class="size-option">Média <span></span></div>
+                    <div class="size-option">Grande <span></span></div>
+                </div>
+
+                <div>Preço</div>
+                <div class="d-flex justify-content-center align-items-center">
+                    R$<p class="price"></p>
+
+                    <div class="quant">
+                        <button>-</button>
+                        <span class="pizza-quantity"></span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+                <div class="buttons d-flex justify-content-center">
+                    <button class="add-cart">Adicionar ao carrinho</button>
+                    <button class="cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-content d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                <img class="mini-photo" src="" alt="">
+                
+                <p></p>
+            </div>
+                
+            <div class="quant cart">
+                <button>-</button>
+
+                <span class="pizza-quantity"></span>
+
+                <button>+</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pizzas.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script0.js"></script>
 </body>
 </html>

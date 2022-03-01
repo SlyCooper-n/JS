@@ -39,7 +39,7 @@ function loadPizza(i) {
                         <img src="${pizza.img}" alt="${pizza.name}">
                     </div>
 
-                    <div class="buy-info">
+                    <div class="details">
                         <h2>${pizza.name}</h2>
 
                         <p>${pizza.description}</p>
@@ -66,7 +66,7 @@ function loadPizza(i) {
                         </div>
                     </div>`
     
-    document.querySelector('.pizza-cart-buy').innerHTML = selectedPizza;
+    document.querySelector('.pizza-container-details').innerHTML = selectedPizza;
 
     setInterval(() => {
         pizzaSize = document.querySelector('.size-option.active').textContent;
