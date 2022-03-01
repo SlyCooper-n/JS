@@ -102,7 +102,11 @@ h1 {
     background: #00000062;
     z-index: 9;
 }
+.pizza-cart-bg.active .pizza-cart {
+    display: block;
+}
 .pizza-cart {
+    display: none;
     position: fixed;
     width: 80%;
     background: white;
@@ -193,18 +197,26 @@ h1 {
     margin: 0px 50px 0px 0px;
     font-size: 2rem;
 }
-.pizza-cart-buy .buy-info div .quant {
+.quant {
     padding: 10px;
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 10px;
     background: #acacac;
 }
-.pizza-cart-buy .buy-info div .quant button {
+.quant.cart {
+    padding: 5px;
+    font-size: 1rem;
+}
+.quant button {
     margin: 0px 20px;
     padding: 10px;
     border: none;
     background: none;
+}
+.quant.cart button {
+    margin: 0px 10px;
+    padding: 5px;
 }
 .pizza-cart-buy .buy-info .buttons {
     margin-top: 45px;
@@ -230,7 +242,9 @@ h1 {
 /*********************** ASIDE ***********************/
 aside {
     width: 0;
+    padding-top: 25px;
     background: lightblue;
+    transition: all 0.3s ease;
 }
 aside.active {
     width: 50%;
@@ -246,6 +260,10 @@ aside p {
     margin: 0px;
 }
 
+aside .cart-pizza > div {
+    width: 100%;
+    margin-bottom: 30px;
+}
 aside .cart-pizza div:first-child img {
     width: 50px;
     height: 50px;

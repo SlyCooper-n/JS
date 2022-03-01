@@ -2,13 +2,16 @@ let pizzaGrid = document.querySelector('.pizza-grid');
 let pizzaCartBg = document.querySelector('.pizza-cart-bg');
 
 let pizzaSize, pizzaQuantity;
+let pizzaIds = [0];
+let cartContents = [];
+
 
 (function renderPizzas(pizzaJson) {
     pizzaGrid.innerHTML = '';
 
     for (var i of pizzaJson) {
         pizzaGrid.innerHTML += `
-        <div id="${i.id}" class="pizza-model">
+        <div class="pizza-model">
         <div class="pizza-img" onclick="togglePizzaCart('${i.id}')"><img src="${i.img}" alt="${i.name}"></div>
         <div class="add-pizza" onclick="togglePizzaCart('${i.id}')">+</div>
 
@@ -51,9 +54,9 @@ function loadPizza(i) {
                             R$<p class="price"> ${parseFloat(pizza.price).toFixed(2)}</p>
 
                             <div class="quant">
-                                <button onclick="updateQuantity('-', ${pizza.id})">-</button>
+                                <button onclick="updateQuantity('-', ${pizza.id}, 0)">-</button>
                                 <span class="pizza-quantity">1</span>
-                                <button onclick="updateQuantity('+', ${pizza.id})">+</button>
+                                <button onclick="updateQuantity('+', ${pizza.id}, 0)">+</button>
                             </div>
                         </div>
 
@@ -67,12 +70,12 @@ function loadPizza(i) {
 
     setInterval(() => {
         pizzaSize = document.querySelector('.size-option.active').textContent;
-        pizzaQuantity = document.querySelector('.pizza-quantity').textContent;
+        pizzaQuantity = document.querySelectorAll('.pizza-quantity')[0].textContent;
     }, 500);
 
 
     document.querySelector('.add-cart').addEventListener('click', () => {
-        document.querySelector('aside').classList.toggle('active');
+        document.querySelector('aside').classList.add('active');
         loadCart(pizzaJson[i], pizzaSize, pizzaQuantity);
         togglePizzaCart();
     });
@@ -81,7 +84,7 @@ function loadPizza(i) {
 function toggleSizeOption(n) {
     let sizeOption = Array.from(document.querySelectorAll('.size-option'));
 
-    sizeOption[n].classList.toggle('active');
+    sizeOption[n].classList.add('active');
 
     for (i in sizeOption) {
         if (i != n) {
@@ -90,38 +93,83 @@ function toggleSizeOption(n) {
     }
 }
 
-function updateQuantity(operator, pizzaId) {
-    let n = Number(document.querySelector('.pizza-quantity').innerHTML);
+function updateQuantity(operator, pizzaId, i) {
+    let n = Number(document.querySelectorAll('.pizza-quantity')[i].innerHTML);
     if (operator == '+') {
         n++;
     } else {
         n--;
         if (n == 0) {
-            togglePizzaCart();
+            pizzaCartBg.classList.remove('active');
+            cartContents.splice(pizzaId, 1);
+            pizzaIds.splice(i, 1)
+            document.querySelector('.cart-pizza').removeChild(document.getElementById(`${pizzaId}`));      
+            if (cartContents.length == 0) {
+                document.querySelector('aside').classList.remove('active');
+            }
+            return;
         }
     }
-    document.querySelector('.pizza-quantity').innerHTML = n;
+    document.querySelectorAll('.pizza-quantity')[i].innerHTML = n;
     let price = pizzaJson[pizzaId - 1].price * n;
     document.querySelector('.price').innerHTML = price.toFixed(2);
+
+    loadValue();
 }
 
+
 function loadCart(pizza, size, quantity) {
-    let cartContent = `
-    <div class="d-flex align-items-center">
-                    <img src="${pizza.img}" alt="${pizza.name}">
-                    
-                    <p>${pizza.name} (${size})</p>
-                </div>
+    let found = false;
+    
+    for (i in pizzaIds) {
+        if (pizza.id == pizzaIds[i]) {
+            let n = Number(document.querySelectorAll('.pizza-quantity')[i].innerHTML);
+            document.querySelectorAll('.pizza-quantity')[i].innerHTML = `${n + 1}`;
+            found = true;
+        }
+    }
+    if (found == false) {
+        pizzaIds.push(pizza.id);
+        cartContents[pizza.id] = `
+        <div id="${pizza.id}" class="cart-content d-flex justify-content-between"><div class="d-flex align-items-center">
+        <img src="${pizza.img}" alt="${pizza.name}">
+        
+        <p>${pizza.name} (${size})</p>
+        </div>
+        
+        <div class="quant cart">
+        <button class="cart-minus-btn" onclick="updateQuantity('-', ${pizza.id}, ${cartContents.length + 1})">-</button>
+        <span class="pizza-quantity">${quantity}</span>
+        <button class="cart-plus-btn" onclick="updateQuantity('+', ${pizza.id}, ${cartContents.length + 1})">+</button>
+        </div></div>`;
+        
+        
+        document.querySelector('.cart-pizza').innerHTML += cartContents[cartContents.length - 1];
+    }
+    
+    
 
-                <div class="quant">
-                    <button>-</button>
-                    <span>${quantity}</span>
-                    <button>+</button>
-                </div>`
+    loadValue();
+}
 
-    document.querySelector('.cart-pizza').innerHTML = cartContent;  
-    document.querySelector('.aside').classList.toggle('active');
-    console.log('ta funfano?') 
+function loadValue() {
+    let price = 0;
+    let n = 0;
+    let arr = Array.from(document.querySelectorAll('.pizza-quantity'));
+
+    for (i of pizzaIds) {
+        price += pizzaJson[i - 1].price;
+    }
+    for (let i = 1; i < arr.length; i++) {
+        n += Number(arr[i].innerHTML);
+    }
+
+    let newPrice = price * n;
+
+    document.querySelectorAll('.subtotal').innerHTML = 'R$ ' + newPrice.toFixed(2);
+    let discount = newPrice / 10;
+    document.querySelectorAll('.discount').innerHTML = 'R$ ' + discount.toFixed(2);
+    document.querySelectorAll('.total').innerHTML = 'R$ ' + (newPrice - discount).toFixed(2);
 }
 
 document.querySelector('.theme').addEventListener('click', () => {
