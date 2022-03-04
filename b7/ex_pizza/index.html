@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="d-flex dark">
+<body class="d-lg-flex dark">
+
+    <section class="d-flex d-lg-none justify-content-end align-items-center">
+        <div class="mobile-cart-quantity" onclick="openMobileCart()">
+            <span class="cart-quantity">0</span> 🛒
+        </div>
+
+        <div class="mobile-cart"></div>
+    </section>
+
     <main>
         <h1>Pizzas</h1>
 
@@ -21,7 +30,7 @@
         </div>
     </main>
 
-    <aside>
+    <aside class="d-none d-lg-block">
         <div class="cart container-fluid">
             <h3>Suas pizzas</h3>
 
@@ -70,7 +79,9 @@
             </div>
         </div>
 
-        <div class="pizza-container-details container-fluid d-flex">
+        <div class="pizza-container-details container-fluid d-flex flex-column flex-lg-row">
+            <p class="d-block d-lg-none" style="font-size: medium;" onclick="closePizzaContainer()">Voltar</p>
+
             <div class="pizza-photo">
                 <img src="" alt="">
             </div>
@@ -98,7 +109,7 @@
                     </div>
                 </div>
 
-                <div class="buttons d-flex justify-content-center">
+                <div class="buttons d-flex flex-column flex-lg-row justify-content-center">
                     <button class="add-cart">Adicionar ao carrinho</button>
                     <button class="cancel">Cancelar</button>
                 </div>

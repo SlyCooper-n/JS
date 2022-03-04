@@ -31,6 +31,27 @@ img {
 }
 
 
+/*********************** SECTION ***********************/
+section {
+    width: 100%;
+    padding: 10px;
+    background: #3765fc;
+}
+section .mobile-cart-quantity {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: lightgray;
+    color: black;
+}
+section .mobile-cart {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 
 /*********************** MAIN ***********************/
 main {
@@ -54,6 +75,7 @@ h1 {
     width: 90%;
     margin: auto;
     grid-template-columns: repeat(3, auto);
+    justify-items: center;
 }
 
 .pizza-model {
@@ -299,6 +321,40 @@ aside > div > button {
 
 
 /*********************** MEDIA QUERIES ***********************/
+@media (max-width:991px) {
+    html, body {
+        font-size: small;
+    }
+    .pizza-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pizza-container-bg.active {
+        display: block;
+        position: absolute;
+    }    
+    .pizza-container {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+    }
+    .pizza-container-details .pizza-photo {
+        height: 100px;
+    }    
+    .pizza-container-details > .details {
+        padding-left: 0;
+    }
+    p.price {
+        margin: 0;
+    }
+    .pizza-container-details .details .buttons .add-cart, .pizza-container-details .details .buttons .cancel {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    
+}
+
 @media (min-width:1500px) {
     html, body {
         font-size: larger;

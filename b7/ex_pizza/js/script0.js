@@ -150,6 +150,7 @@ function addPizzaToCart(id, quantity) {
     closePizzaContainer();
     g('aside').classList.add('active');
     renderCart(cart);
+    g('.cart-quantity').innerHTML = cart.length;
 }
 
 function closePizzaContainer() {
@@ -185,6 +186,9 @@ function renderCart(cartArray) {
     g('.subtotal').innerHTML = `R$ ${priceTotal.toFixed(2)}`;
     g('.discount').innerHTML = `R$ ${(priceTotal / 10).toFixed(2)}`;
     g('.total').innerHTML = `R$ ${(priceTotal - (priceTotal / 10)).toFixed(2)}`;
+
+    let cloneMobile = g('.cart').cloneNode(true);
+    g('.mobile-cart').append(cloneMobile);
 }
 
 function updateCartQuantity(operator, pizza, i) {
