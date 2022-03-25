@@ -1,15 +1,15 @@
 {
-  "name": "battery",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Gabriel VS Frasão",
-  "license": "MIT",
-  "dependencies": {
-    "bootstrap": "^5.1.3"
-  }
+    "name": "battery",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Gabriel VS Frasão",
+    "license": "MIT",
+    "dependencies": {
+        "tailwindcss": "^3.0.23"
+    }
 }
