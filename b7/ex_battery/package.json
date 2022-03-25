@@ -10,6 +10,7 @@
     "author": "Gabriel VS Frasão",
     "license": "MIT",
     "dependencies": {
+        "moment": "^2.29.1",
         "tailwindcss": "^3.0.23"
     }
 }
