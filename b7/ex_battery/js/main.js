@@ -1,5 +1,4 @@
 // import { Moment } from "moment";
-// JS modules test
 
 const g = (el) => document.querySelector(el);
 const gall = (el) => document.querySelectorAll(el);
@@ -35,10 +34,16 @@ input.addEventListener("keypress", (e) => {
         input.value += e.key.toUpperCase();
     }
 });
+g("button").addEventListener("click", () => {
+    let sounds = input.value.split("");
+    playSong(sounds);
+});
 
 function filterKey(event) {
     let key = event.key;
-    const currentAudio = g(`audio[data-keycode="${event.code}"]`);
+    const respectiveAudio = g(`audio[data-keycode="${event.code}"]`);
+    respectiveAudio.currentTime = 0;
+    respectiveAudio.play();
     letters.forEach((el) => {
         if (el.innerText == key.toUpperCase()) {
             el.style.borderColor = "yellow";
@@ -49,5 +54,17 @@ function filterKey(event) {
             }, 500);
             return;
         }
+    });
+}
+
+function playSong(sounds) {
+    let wait = 0;
+
+    sounds.forEach((el) => {
+        setTimeout(() => {
+            g(`audio[data-keycode="Key${el}"]`).play();
+        }, wait);
+
+        wait += 250;
     });
 }
