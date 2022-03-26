@@ -9,3 +9,9 @@ html,
 body {
     min-height: 100vh;
 }
+
+.letters {
+    div {
+        transition: all 0.3s ease;
+    }
+}

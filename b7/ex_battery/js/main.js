@@ -1,4 +1,4 @@
-import { Moment } from "moment";
+// import { Moment } from "moment";
 // JS modules test
 
 const g = (el) => document.querySelector(el);
@@ -16,8 +16,10 @@ function filterKey(event) {
     letters.forEach((el) => {
         if (el.innerText == key.toUpperCase()) {
             el.style.borderColor = "yellow";
+            el.style.color = "yellow";
             setTimeout(() => {
                 el.style.borderColor = "#e5e7eb";
+                el.style.color = "#e5e7eb";
             }, 500);
 
             if (event.target == input) {
