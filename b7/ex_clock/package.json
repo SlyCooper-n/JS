@@ -11,5 +11,8 @@
     "license": "MIT",
     "devDependencies": {
         "tailwindcss": "^3.0.23"
+    },
+    "dependencies": {
+        "moment": "^2.29.1"
     }
 }

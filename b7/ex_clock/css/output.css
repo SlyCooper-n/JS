@@ -959,12 +959,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
-.top-0 {
-  top: 0px;
+.top-16 {
+  top: 4rem;
 }
 
-.left-1\/2 {
-  left: 50%;
+.right-1\/2 {
+  right: 50%;
+}
+
+.top-24 {
+  top: 6rem;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flex {
@@ -991,6 +1008,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.75rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-28 {
+  height: 7rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
 .w-96 {
   width: 24rem;
 }
@@ -999,8 +1032,35 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 0.5rem;
 }
 
-.-translate-x-1\/2 {
-  --tw-translate-x: -50%;
+.w-full {
+  width: 100%;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.translate-x-3 {
+  --tw-translate-x: 0.75rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-1\/2 {
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-90 {
+  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1043,6 +1103,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
+.bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -1050,6 +1125,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-semibold {
@@ -1061,57 +1141,64 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 
-.dash {
-  transform-origin: left;
-  display: flex;
-  justify-content: end;
+.dashes {
+  transform: translate(-5px, calc(12rem - 18px));
 }
 
-.dash:nth-child(1) {
-  transform: rotate(0deg);
+.dashes .dash {
+  transform-origin: 12rem;
+  transform: rotate(calc(360deg / 12 * var(--i)));
 }
 
-.dash:nth-child(2) {
-  transform: rotate(30deg);
+.dashes .dash:nth-child(1) {
+  --i: 0;
 }
 
-.dash:nth-child(3) {
-  transform: rotate(60deg);
+.dashes .dash:nth-child(2) {
+  --i: 1;
 }
 
-.dash:nth-child(4) {
-  transform: rotate(90deg);
+.dashes .dash:nth-child(3) {
+  --i: 2;
 }
 
-.dash:nth-child(5) {
-  transform: rotate(120deg);
+.dashes .dash:nth-child(4) {
+  --i: 3;
 }
 
-.dash:nth-child(6) {
-  transform: rotate(150deg);
+.dashes .dash:nth-child(5) {
+  --i: 4;
 }
 
-.dash:nth-child(7) {
-  transform: rotate(180deg);
+.dashes .dash:nth-child(6) {
+  --i: 5;
 }
 
-.dash:nth-child(8) {
-  transform: rotate(210deg);
+.dashes .dash:nth-child(7) {
+  --i: 6;
 }
 
-.dash:nth-child(9) {
-  transform: rotate(240deg);
+.dashes .dash:nth-child(8) {
+  --i: 7;
 }
 
-.dash:nth-child(10) {
-  transform: rotate(270deg);
+.dashes .dash:nth-child(9) {
+  --i: 8;
 }
 
-.dash:nth-child(11) {
-  transform: rotate(300deg);
+.dashes .dash:nth-child(10) {
+  --i: 9;
 }
 
-.dash:nth-child(12) {
-  transform: rotate(330deg);
+.dashes .dash:nth-child(11) {
+  --i: 10;
+}
+
+.dashes .dash:nth-child(12) {
+  --i: 11;
+}
+
+.pointers .pointer {
+  transform-origin: bottom;
 }
 /*# sourceMappingURL=output.css.map */
