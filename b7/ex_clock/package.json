@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "tailwind": "npx tailwindcss -i ./css/input.min.css -o ./css/output.css --watch"
+        "tailwind": "npx tailwindcss -i ./css/input.min.css -o ./css/output.css --watch",
+        "gits": "git switch main && git merge b7 && git push && git switch b7"
     },
     "keywords": [],
     "author": "Gabriel VS Frasão",
