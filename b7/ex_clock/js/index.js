@@ -7,6 +7,7 @@ setInterval(() => {
     let date = new Date();
     updateClocks(date);
 }, 1000);
+updateClock(date);
 
 function updateClocks(date) {
     let sec = date.getSeconds(),
