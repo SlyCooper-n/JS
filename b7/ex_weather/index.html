@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Know the weather</title>
+        <meta name="description" content="Know the current weather" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="apple-touch-icon" href="icon.png" />
+
+        <link rel="stylesheet" href="css/output.css" />
+
+        <meta name="theme-color" content="#fafafa" />
+    </head>
+
+    <body class="h-screen bg-gray-700 text-slate-100">
+        <div
+            class="container h-full mx-auto flex flex-col justify-center items-center"
+        >
+            <h1 class="text-5xl font-semibold pb-8">Weather</h1>
+
+            <form action="" class="w-3/4">
+                <div class="flex w-full">
+                    <input
+                        type="search"
+                        name="weather-search"
+                        class="rounded-md flex-auto p-2 text-black"
+                        placeholder="Search for some city..."
+                    />
+                    <button
+                        type="submit"
+                        class="ml-2 w-1/4 py-2 rounded-md bg-slate-800"
+                    >
+                        Search
+                    </button>
+                </div>
+            </form>
+
+            <div
+                class="result w-3/4 my-8 p-4 text-center bg-slate-900 rounded-md"
+            >
+                <h2 class="pb-4 text-2xl">São Paulo, BR</h2>
+
+                <div class="info flex">
+                    <div class="temp flex-1 text-center">
+                        <h3 class="text-xl text-gray-600">Temperature</h3>
+
+                        <p class="text-2xl">
+                            30 <sup class="text-base">°C</sup>
+                        </p>
+
+                        <div
+                            class="w-1/2 h-auto aspect-square mx-auto mt-4 rounded-full bg-amber-600"
+                        ></div>
+                    </div>
+
+                    <div class="wind flex-1 text-center">
+                        <h3 class="text-xl text-gray-600">Wind</h3>
+
+                        <p class="text-2xl">
+                            20 <span class="text-base">Km/h</span>
+                        </p>
+
+                        <div
+                            class="wind-direction relative w-2/5 h-auto mx-auto mt-6 aspect-square border border-white rounded-full"
+                        >
+                            <div
+                                class="pointer absolute w-px h-1/3 top-2 left-1/2 -translate-x-1/2 bg-slate-100"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Created by B7Web</p>
+        </div>
+
+        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
