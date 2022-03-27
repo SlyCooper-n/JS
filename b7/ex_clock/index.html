@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple clock | Ex</title>
+        <meta name="description" content="Simple clock" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="manifest" href="site.webmanifest" />
+
+        <link rel="stylesheet" href="css/output.css" />
+
+        <meta name="theme-color" content="#fafafa" />
+    </head>
+
+    <body class="bg-gray-700 text-slate-100 h-screen">
+        <div
+            class="container mx-auto flex flex-col justify-center items-center h-full"
+        >
+            <h1 class="text-5xl font-semibold pb-8">Analogical clock</h1>
+
+            <div
+                class="an-clock relative w-96 h-96 border-4 border-slate-100 rounded-full"
+            >
+                <div class="dashes relative h-full">
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                    <div class="dash absolute">
+                        <div
+                            class="point w-2 h-7 bg-slate-100 rotate-90 translate-x-3"
+                        ></div>
+                    </div>
+                </div>
+
+                <div class="pointers w-full h-full">
+                    <div
+                        id="hour"
+                        class="pointer absolute top-16 right-1/2 translate-x-1/2 w-3 h-32 bg-slate-100 rounded-full"
+                    ></div>
+                    <div
+                        id="min"
+                        class="pointer absolute top-24 right-1/2 translate-x-1/2 w-3 h-24 bg-slate-300 rounded-full"
+                    ></div>
+                    <div
+                        id="sec"
+                        class="pointer absolute top-20 right-1/2 translate-x-1/2 w-3 h-28 bg-red-400 rounded-full"
+                    ></div>
+
+                    <div
+                        class="center absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-slate-100 rounded-full"
+                    ></div>
+                </div>
+            </div>
+
+            <div class="dg-clock py-8 text-2xl">--:--:--</div>
+
+            <p>Created by B7Web</p>
+        </div>
+
+        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
