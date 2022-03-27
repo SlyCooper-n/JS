@@ -1,0 +1,15 @@
+{
+    "name": "ex_clock",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "tailwind": "npx tailwindcss -i ./css/input.min.css -o ./css/output.css --watch"
+    },
+    "keywords": [],
+    "author": "Gabriel VS Frasão",
+    "license": "MIT",
+    "devDependencies": {
+        "tailwindcss": "^3.0.23"
+    }
+}

@@ -1,0 +1,50 @@
+@import "normalize";
+@import "base";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dash {
+    &:nth-child(1) {
+        --i: 0;
+    }
+    &:nth-child(2) {
+        --i: 1;
+    }
+    &:nth-child(3) {
+        --i: 2;
+    }
+    &:nth-child(4) {
+        --i: 3;
+    }
+    &:nth-child(5) {
+        --i: 4;
+    }
+    &:nth-child(6) {
+        --i: 5;
+    }
+    &:nth-child(7) {
+        --i: 6;
+    }
+    &:nth-child(8) {
+        --i: 7;
+    }
+    &:nth-child(9) {
+        --i: 8;
+    }
+    &:nth-child(10) {
+        --i: 9;
+    }
+    &:nth-child(11) {
+        --i: 10;
+    }
+    &:nth-child(12) {
+        --i: 11;
+    }
+
+    transform-origin: 100px;
+    transform: rotate(calc(360deg / 12 * var(--i)));
+    display: flex;
+    justify-content: end;
+}

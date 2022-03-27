@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple clock | Ex</title>
+        <meta name="description" content="Simple clock" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="manifest" href="site.webmanifest" />
+
+        <link rel="stylesheet" href="css/output.css" />
+
+        <meta name="theme-color" content="#fafafa" />
+    </head>
+
+    <body class="bg-gray-700 text-slate-100 h-screen">
+        <div class="container flex flex-col justify-center items-center h-full">
+            <h1 class="text-5xl font-semibold pb-8">Analogical clock</h1>
+
+            <div
+                class="an-clock w-96 h-96 border-4 border-slate-100 rounded-full"
+            >
+                <div class="dashes relative h-full">
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                    <div class="dash absolute w-2 h-7 bg-slate-100"></div>
+                </div>
+
+                <div class="pointer"></div>
+                <div class="center"></div>
+            </div>
+
+            <div class="dg-clock">--:--:--</div>
+
+            <p>Created by B7Web</p>
+        </div>
+
+        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
