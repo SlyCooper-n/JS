@@ -5,25 +5,20 @@ const digitalClock = g(".dg-clock");
 
 setInterval(() => {
     let date = new Date();
-    updateDigitalClock(date);
-    updateAnalogicalClock(date);
+    updateClocks(date);
 }, 1000);
 
-function updateDigitalClock(date) {
-    let hours = addZero(date.getHours()),
-        min = addZero(date.getMinutes()),
-        sec = addZero(date.getSeconds());
-
-    digitalClock.innerHTML = `${hours} : ${min} : ${sec}`;
-}
-
-function updateAnalogicalClock(date) {
+function updateClocks(date) {
     let sec = date.getSeconds(),
         min = date.getMinutes(),
         hours = date.getHours(),
-        x = findNum(sec),
-        y = findNum(min),
+        x = findDeg(sec),
+        y = findDeg(min),
         z = findHourDeg(hours);
+
+    digitalClock.innerHTML = `${addZero(hours)} : ${addZero(min)} : ${addZero(
+        sec
+    )}`;
 
     g("#sec").style.transform = `rotate(calc(${sec} * 6deg)) translateX(${x}%)`;
     g("#min").style.transform = `rotate(calc(${min} * 6deg)) translateX(${y}%)`;
@@ -40,7 +35,7 @@ function addZero(el) {
     }
 }
 
-function findNum(num) {
+function findDeg(num) {
     let y;
     if (num <= 30) {
         y = 50 - num * 3.3333333;
@@ -53,10 +48,13 @@ function findNum(num) {
 }
 
 function findHourDeg(x) {
+    if (x >= 12) {
+        x -= 12;
+    }
     if (x <= 6) {
         return Math.floor(50 - x * 16.6666666);
     }
-    if (x > 6) {
+    if (x > 6 && x < 12) {
         return Math.ceil((x - 6) * 16.6666666 - 50);
     }
 }
