@@ -172,4 +172,9 @@ textarea { resize: vertical; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* { -webkit-transition: all 0.3s ease; transition: all 0.3s ease; }
+
+.result { display: none; opacity: 0; }
+
+.result .temp sup, .result .wind span { font-size: 1rem; }
 /*# sourceMappingURL=input.min.css.map */
