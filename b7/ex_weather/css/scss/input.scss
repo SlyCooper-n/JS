@@ -4,3 +4,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    transition: all 0.3s ease;
+}
+.result {
+    display: none;
+    opacity: 0;
+
+    .temp sup,
+    .wind span {
+        font-size: 1rem;
+    }
+}
