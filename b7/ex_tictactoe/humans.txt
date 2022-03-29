@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <Gabriel VS Frasão> -- <Front-end developer>
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, JS
+    Apache Server Configs, Modernizr, Normalize.css
