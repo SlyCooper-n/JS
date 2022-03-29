@@ -1,0 +1,16 @@
+{
+    "name": "ex_tictactoe",
+    "version": "1.0.0",
+    "description": "Simple tic tac toe",
+    "main": "index.js",
+    "scripts": {
+        "tailwind": "npx tailwindcss -i ./css/input.min.css -o ./css/output.css --watch",
+        "gits": "git switch main && git merge b7 && git push && git switch b7"
+    },
+    "keywords": [],
+    "author": "Gabriel VS Frasão <gabrielvitor.frasao@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "tailwindcss": "^3.0.23"
+    }
+}
