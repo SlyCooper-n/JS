@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Drawsome | Ex</title>
+        <meta name="description" content="Simple canvas for drawing" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="apple-touch-icon" href="icon.png" />
+
+        <link rel="stylesheet" href="css/output.css" />
+
+        <meta name="theme-color" content="#fafafa" />
+    </head>
+
+    <body class="min-h-screen flex items-center bg-gray-700 text-slate-100">
+        <div
+            class="container mx-auto h-full flex flex-col justify-center items-center"
+        >
+            <h1 class="text-5xl font-semibold pb-8">Drawsome</h1>
+
+            <canvas
+                id="screen"
+                class="w-full max-w-5xl bg-slate-100 rounded-tl-md rounded-tr-md"
+            ></canvas>
+
+            <div class="color-area w-full max-w-5xl flex">
+                <div
+                    class="color flex-auto h-7 border-4 border-black bg-black rounded-bl-md"
+                ></div>
+                <div
+                    class="color flex-auto h-7 border-4 border-blue-500 bg-blue-500"
+                ></div>
+                <div
+                    class="color flex-auto h-7 border-4 border-green-500 bg-green-500"
+                ></div>
+                <div
+                    class="color flex-auto h-7 border-4 border-yellow-500 bg-yellow-500"
+                ></div>
+                <div
+                    class="color flex-auto h-7 border-4 border-red-500 bg-red-500 rounded-br-md"
+                ></div>
+            </div>
+
+            <button
+                class="my-8 px-4 py-2 border border-slate-100 bg-gray-800 rounded-md"
+            >
+                Clear canvas
+            </button>
+
+            <p>Created by B7Web</p>
+        </div>
+
+        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
