@@ -16,12 +16,13 @@ let boxesObj = {
 
 let turn = sortTurn(),
     playing = true,
-    whoWin;
+    whoWin,
+    lastChange;
 
 const turnText = g(".turn p"),
     winner = g(".winner p"),
     boxes = gall(".smaller-box"),
-    resetBtn = g("button");
+    resetBtn = g(".reset");
 
 reset();
 
@@ -30,6 +31,7 @@ boxes.forEach((el) => {
     el.addEventListener("click", itemClick);
 });
 
+g(".btns button").addEventListener("click", undo);
 resetBtn.addEventListener("click", reset);
 
 // Functions
@@ -56,18 +58,31 @@ function itemClick(e) {
         return;
     }
     boxesObj[x] = turn;
+    lastChange = x;
 
     turn == "X" ? (turn = "O") : (turn = "X");
     turnText.innerHTML = turn;
+    g(".btns button").removeAttribute("disabled");
     renderBoxes();
 }
 
 function renderBoxes() {
-    for (const i in boxesObj) {
+    for (let i in boxesObj) {
         g(`div[data-item=${i}`).innerHTML = boxesObj[i];
     }
 
     checkgame();
+}
+
+function undo() {
+    if (boxesObj[lastChange] == "" || !playing) {
+        return;
+    }
+    turn == "X" ? (turn = "O") : (turn = "X");
+    turnText.innerHTML = turn;
+    boxesObj[lastChange] = "";
+    g(".btns button").setAttribute("disabled", true);
+    renderBoxes();
 }
 
 function reset() {
@@ -87,11 +102,13 @@ function checkgame() {
     if (checkForWinner()) {
         winner.innerHTML = `${whoWin} has won`;
         playing = false;
+        g(".btns button").setAttribute("disabled", true);
         return;
     }
     if (isFull()) {
         winner.innerHTML = "The table is full, nobody won";
         playing = false;
+        g(".btns button").setAttribute("disabled", true);
         return;
     }
     playing = true;
