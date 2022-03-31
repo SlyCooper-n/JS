@@ -14,11 +14,76 @@
         <meta name="theme-color" content="#fafafa" />
     </head>
 
-    <body class="bg-gray-700 text-slate-100">
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+    <body class="h-screen bg-gray-700 text-slate-100">
+        <div
+            class="container mx-auto h-full flex flex-col justify-center items-center"
+        >
+            <h1 class="text-5xl font-semibold pb-12">Tic Tac Toe</h1>
+
+            <div class="big-box grid grid-cols-3 w-3/4 max-w-md pb-12">
+                <div
+                    data-item="a1"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-r border-b border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="b1"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-r border-b border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="c1"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-b border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="a2"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-r border-b border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="b2"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-r border-b border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="c2"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-b border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="a3"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-r border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="b3"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-r border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+                <div
+                    data-item="c3"
+                    class="smaller-box text-6xl font-semibold flex justify-center items-center aspect-square h-auto border-slate-100 transition-all hover:bg-slate-800 hover:opacity-50"
+                ></div>
+            </div>
+
+            <div
+                class="status flex flex-col justify-around items-center border rounded-md w-3/4 max-w-md px-2 py-4 md:w-1/2 md:px-0 md:flex-row"
+            >
+                <div class="turn pb-2 md:pb-0">
+                    <h2>Turn:</h2>
+
+                    <p class="text-center"></p>
+                </div>
+
+                <div class="winner">
+                    <h2 class="text-center">Winner:</h2>
+
+                    <p class="text-center"></p>
+                </div>
+            </div>
+
+            <button
+                class="mt-8 px-4 py-2 border border-slate-900 rounded-md bg-gray-800 text-slate-300"
+            >
+                Reset
+            </button>
+        </div>
 
         <script src="js/vendor/modernizr-3.11.2.min.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>
