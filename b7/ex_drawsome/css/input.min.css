@@ -172,4 +172,7 @@ textarea { resize: vertical; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.color.active { border-color: lightgray; }
+
+.point { width: 5px; height: 5px; border-radius: 100%; }
 /*# sourceMappingURL=input.min.css.map */
