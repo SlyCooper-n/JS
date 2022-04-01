@@ -4,14 +4,32 @@ const gall = (el) => document.querySelectorAll(el);
 // INITIAL DATA
 const screen = g("canvas"),
     divColors = gall(".color"),
-    clearBtn = g("button");
+    clearBtn = g("button"),
+    container = g(".container");
 
 let selectedColor = "black",
     baseColor,
-    drawMode;
-// ctx = screen.getContext("2d");
+    drawMode,
+    coordX,
+    coordY,
+    ctx = screen.getContext("2d");
 
 // EVENT
+document.addEventListener("DOMContentLoaded", () => {
+    let w = Array.from(getComputedStyle(container).width);
+
+    let temp = w.indexOf("p");
+    w.splice(temp, 2);
+
+    w = Number(w.join(""));
+    if (w > 1024) {
+        w = 1024;
+    }
+
+    screen.width = w;
+    screen.height = (w * 9) / 16;
+});
+
 divColors.forEach((el) => {
     el.addEventListener("click", selectColor);
 });
@@ -20,7 +38,8 @@ screen.addEventListener("mousemove", mouseMove);
 screen.addEventListener("mousedown", mouseDown);
 screen.addEventListener("mouseup", mouseUp);
 
-clearBtn.addEventListener("click", clearCanvas);
+clearBtn.addEventListener("click", clearScreen);
+// g(".download").addEventListener("click", downloadImage);
 
 // FUNCTIONS
 function selectColor(e) {
@@ -48,24 +67,42 @@ function selectColor(e) {
 }
 
 function mouseMove(e) {
-    let coordX = e.offsetX;
-    let coordY = e.offsetY;
-
     if (drawMode) {
-        // draw(selectedColor, coordX, coordY);
+        draw(e.offsetX, e.offsetY);
     }
 }
 function mouseDown(e) {
+    coordX = e.offsetX;
+    coordY = e.offsetY;
     drawMode = true;
 }
 function mouseUp(e) {
     drawMode = false;
 }
 
-function draw(color, x, y) {
-    // screen.innerHTML += `<div class="point" style="position: absolute; top:${y}px; left: ${x}px; background: ${selectedColor};"></div>`;
+function draw(x, y) {
+    ctx.beginPath();
+    ctx.lineWidth = 5;
+    ctx.lineJoin = "round";
+    ctx.moveTo(coordX, coordY);
+    ctx.lineTo(x, y);
+    ctx.closePath();
+    ctx.strokeStyle = selectedColor;
+    ctx.stroke();
+
+    coordX = x;
+    coordY = y;
 }
 
-function clearCanvas() {
-    // screen.innerHTML = "";
+function clearScreen() {
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
+
+// function downloadImage(e) {
+//     e.preventDefault();
+//     let link = screen.toDataURL("image/png");
+
+//     g(".download").href = link;
+//     g(".download").download = "canvas.png";
+// }
