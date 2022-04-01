@@ -20,26 +20,31 @@
         >
             <h1 class="text-5xl font-semibold pb-8">Drawsome</h1>
 
-            <canvas
+            <div
                 id="screen"
-                class="w-full max-w-5xl bg-slate-100 rounded-tl-md rounded-tr-md"
-            ></canvas>
+                class="relative w-full aspect-video max-w-5xl bg-slate-100 rounded-tl-md rounded-tr-md cursor-crosshair"
+            ></div>
 
             <div class="color-area w-full max-w-5xl flex">
                 <div
-                    class="color flex-auto h-7 border-4 border-black bg-black rounded-bl-md"
+                    data-color="black"
+                    class="color active flex-auto h-7 border-4 border-black bg-black rounded-bl-md cursor-pointer"
                 ></div>
                 <div
-                    class="color flex-auto h-7 border-4 border-blue-500 bg-blue-500"
+                    data-color="blue"
+                    class="color flex-auto h-7 border-4 border-blue-500 bg-blue-500 cursor-pointer"
                 ></div>
                 <div
-                    class="color flex-auto h-7 border-4 border-green-500 bg-green-500"
+                    data-color="green"
+                    class="color flex-auto h-7 border-4 border-green-500 bg-green-500 cursor-pointer"
                 ></div>
                 <div
-                    class="color flex-auto h-7 border-4 border-yellow-500 bg-yellow-500"
+                    data-color="yellow"
+                    class="color flex-auto h-7 border-4 border-yellow-500 bg-yellow-500 cursor-pointer"
                 ></div>
                 <div
-                    class="color flex-auto h-7 border-4 border-red-500 bg-red-500 rounded-br-md"
+                    data-color="red"
+                    class="color flex-auto h-7 border-4 border-red-500 bg-red-500 rounded-br-md cursor-pointer"
                 ></div>
             </div>
 
