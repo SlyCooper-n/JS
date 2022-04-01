@@ -2,7 +2,7 @@ const g = (el) => document.querySelector(el);
 const gall = (el) => document.querySelectorAll(el);
 
 // INITIAL DATA
-const screen = g(".container div"),
+const screen = g("canvas"),
     divColors = gall(".color"),
     clearBtn = g("button");
 
