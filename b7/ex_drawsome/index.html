@@ -28,31 +28,67 @@
             <div class="color-area w-full max-w-5xl flex">
                 <div
                     data-color="black"
-                    class="color active flex-auto h-7 border-4 border-black bg-black rounded-bl-md cursor-pointer"
+                    class="color active flex-auto h-7 border-4 transition border-black bg-black rounded-bl-md cursor-pointer"
                 ></div>
                 <div
                     data-color="blue"
-                    class="color flex-auto h-7 border-4 border-blue-500 bg-blue-500 cursor-pointer"
+                    class="color flex-auto h-7 border-4 transition border-blue-500 bg-blue-500 cursor-pointer"
                 ></div>
                 <div
                     data-color="green"
-                    class="color flex-auto h-7 border-4 border-green-500 bg-green-500 cursor-pointer"
+                    class="color flex-auto h-7 border-4 transition border-green-500 bg-green-500 cursor-pointer"
                 ></div>
                 <div
                     data-color="yellow"
-                    class="color flex-auto h-7 border-4 border-yellow-500 bg-yellow-500 cursor-pointer"
+                    class="color flex-auto h-7 border-4 transition border-yellow-500 bg-yellow-500 cursor-pointer"
                 ></div>
                 <div
                     data-color="red"
-                    class="color flex-auto h-7 border-4 border-red-500 bg-red-500 rounded-br-md cursor-pointer"
+                    class="color flex-auto h-7 border-4 transition border-red-500 bg-red-500 rounded-br-md cursor-pointer"
                 ></div>
             </div>
 
-            <button
-                class="my-8 px-4 py-2 border border-slate-100 bg-gray-800 rounded-md"
-            >
-                Clear canvas
-            </button>
+            <div class="line-width-area flex mt-2">
+                <div
+                    data-width="1"
+                    class="width flex justify-center items-center w-14 mx-2 py-2 border border-slate-100 rounded-full transition hover:cursor-pointer"
+                >
+                    1px
+                </div>
+                <div
+                    data-width="5"
+                    class="width active flex justify-center items-center w-14 mx-2 py-2 border border-slate-100 rounded-full transition hover:cursor-pointer"
+                >
+                    5px
+                </div>
+                <div
+                    data-width="10"
+                    class="width flex justify-center items-center w-14 mx-2 py-2 border border-slate-100 rounded-full transition hover:cursor-pointer"
+                >
+                    10px
+                </div>
+                <div
+                    data-width="20"
+                    class="width flex justify-center items-center w-14 mx-2 py-2 border border-slate-100 rounded-full transition hover:cursor-pointer"
+                >
+                    20px
+                </div>
+            </div>
+
+            <div class="btns">
+                <button
+                    class="my-8 px-4 py-2 border border-slate-100 bg-gray-800 rounded-md"
+                >
+                    Clear canvas
+                </button>
+
+                <button
+                    disabled
+                    class="download disabled:opacity-50 ml-4 my-8 px-4 py-2 border border-slate-100 bg-gray-800 rounded-md"
+                >
+                    Download as image
+                </button>
+            </div>
 
             <p>Created by B7Web</p>
         </div>

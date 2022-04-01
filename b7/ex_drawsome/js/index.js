@@ -4,15 +4,19 @@ const gall = (el) => document.querySelectorAll(el);
 // INITIAL DATA
 const screen = g("canvas"),
     divColors = gall(".color"),
+    divWidths = gall(".width"),
     clearBtn = g("button"),
-    container = g(".container");
+    container = g(".container"),
+    downloadBtn = g(".download");
 
 let selectedColor = "black",
     baseColor,
     drawMode,
     coordX,
     coordY,
-    ctx = screen.getContext("2d");
+    ctx = screen.getContext("2d"),
+    clicked,
+    width = 5;
 
 // EVENT
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,13 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
 divColors.forEach((el) => {
     el.addEventListener("click", selectColor);
 });
+divWidths.forEach((el) => {
+    el.addEventListener("click", selectWidth);
+});
 
 screen.addEventListener("mousemove", mouseMove);
 screen.addEventListener("mousedown", mouseDown);
 screen.addEventListener("mouseup", mouseUp);
 
 clearBtn.addEventListener("click", clearScreen);
-// g(".download").addEventListener("click", downloadImage);
+downloadBtn.addEventListener("click", downloadImage);
 
 // FUNCTIONS
 function selectColor(e) {
@@ -66,6 +73,12 @@ function selectColor(e) {
     }
 }
 
+function selectWidth(e) {
+    width = e.target.getAttribute("data-width");
+    g(".width.active").classList.remove("active");
+    e.target.classList.add("active");
+}
+
 function mouseMove(e) {
     if (drawMode) {
         draw(e.offsetX, e.offsetY);
@@ -78,11 +91,13 @@ function mouseDown(e) {
 }
 function mouseUp(e) {
     drawMode = false;
+
+    downloadBtn.disabled = false;
 }
 
 function draw(x, y) {
     ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = width;
     ctx.lineJoin = "round";
     ctx.moveTo(coordX, coordY);
     ctx.lineTo(x, y);
@@ -97,12 +112,17 @@ function draw(x, y) {
 function clearScreen() {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    downloadBtn.disabled = true;
 }
 
-// function downloadImage(e) {
-//     e.preventDefault();
-//     let link = screen.toDataURL("image/png");
+function downloadImage() {
+    let link = screen.toDataURL("image/png");
 
-//     g(".download").href = link;
-//     g(".download").download = "canvas.png";
-// }
+    let a = document.createElement("a");
+    a.href = link;
+    a.download = "canvas.png";
+    container.appendChild(a);
+    a.click();
+    container.removeChild(a);
+}
