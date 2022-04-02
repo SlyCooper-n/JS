@@ -1,5 +1,5 @@
 # JS
  JavaScript courses
  
- * [B7 exercises](https://github.com/SlyCooper-n/JS/tree/main/b7)
- * [Guanabara exercises](https://github.com/SlyCooper-n/JS/tree/main/Guanabara)
+ * [B7 exercises](https://slycooper-n.github.io/JS/b7)
+ * [Guanabara exercises](https://slycooper-n.github.io/JS/Guanabara)
