@@ -135,6 +135,7 @@ function showResults() {
 function resetQuiz() {
     results.style.display = "none";
     answers = [];
+    correct = 0;
     indexQuiz = 0;
     renderOptions(indexQuiz);
 }
