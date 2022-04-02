@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Quiz | Ex</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="apple-touch-icon" href="icon.png" />
+
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/output.css" />
+
+        <meta name="theme-color" content="#fafafa" />
+    </head>
+
+    <body class="flex items-center min-h-screen bg-gray-700 text-slate-100">
+        <div
+            id="progress-bar"
+            class="absolute top-0 w-full h-2 bg-green-600 rounded-full"
+        ></div>
+
+        <div
+            class="container flex flex-col mx-auto px-2 justify-center items-center sm:px-0"
+        >
+            <h1 class="text-5xl text-left font-semibold pb-8">Quiz</h1>
+
+            <button id="start" class="px-4 py-2 bg-green-600 rounded-md">
+                Start
+            </button>
+
+            <h2 id="question" class="text-2xl pb-4" style="display: none"></h2>
+
+            <section class="w-3/4" style="display: none">
+                <div class="mb-2 p-2 bg-gray-800 rounded-md cursor-pointer">
+                    <span
+                        class="option-number inline-flex justify-center items-center w-10 h-10 mr-2 text-center align-middle bg-gray-900 rounded-full"
+                    ></span>
+                    <p class="option inline-block"></p>
+                </div>
+            </section>
+
+            <div
+                id="results"
+                class="w-3/4 mt-8 p-4 flex flex-col items-center bg-gray-400 bg-opacity-50 text-black font-semibold rounded-md"
+                style="display: none"
+            >
+                <img src="./prize.png" alt="Prize" class="w-1/2" />
+
+                <h2 class="my-2 text-base text-center">Tá ruim em</h2>
+
+                <h3 class="text-3xl text-center">Acertou 20%</h3>
+
+                <p class="mt-3 text-center">
+                    Você respondeu 10 questões e acertou 2
+                </p>
+
+                <button
+                    id="try"
+                    class="mt-8 px-4 py-2 bg-gray-800 text-white rounded-md"
+                >
+                    Try again
+                </button>
+            </div>
+
+            <p class="pt-6">Created by B7Web</p>
+        </div>
+
+        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/questions.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

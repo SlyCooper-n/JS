@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#progress-bar {
+    transition: all 0.3s ease;
+}
+
+section {
+    min-width: 270px;
+}
