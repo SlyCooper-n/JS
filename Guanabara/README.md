@@ -6,5 +6,5 @@ Made together with Guanabara on YouTube
 * [Using hours](https://slycooper-n.github.io/JS/Guanabara/ex2.html)
 * [Age checker](https://slycooper-n.github.io/JS/Guanabara/ex3.html)
 * [Counter](https://slycooper-n.github.io/JS/Guanabara/ex4.html)
-* [multiplication table](https://slycooper-n.github.io/JS/Guanabara/ex5.html)
+* [Multiplication table](https://slycooper-n.github.io/JS/Guanabara/ex5.html)
 * [Number analyzer](https://slycooper-n.github.io/JS/Guanabara/ex6.html)
