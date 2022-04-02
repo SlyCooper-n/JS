@@ -1,5 +1,7 @@
 ## B7 Exercices
 
+Templates and JS code entirely based on B7Web ones
+
 * [Drums](https://github.com/SlyCooper-n/JS/tree/main/b7/ex_battery/)
 * [Clock](https://github.com/SlyCooper-n/JS/tree/main/b7/ex_clock/)
 * [Weather](https://github.com/SlyCooper-n/JS/tree/main/b7/ex_weather/)
