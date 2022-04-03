@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Drag'n'Drop | Ex</title>
+        <meta name="description" content="Drag and Drop simple feature" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/output.css" />
+
+        <meta name="theme-color" content="#fafafa" />
+    </head>
+
+    <body
+        class="min-h-screen flex flex-col justify-center items-center bg-gray-700 text-slate-100 overflow-x-hidden"
+    >
+        <div
+            class="container mx-auto h-full flex flex-col justify-center items-center"
+        >
+            <h1 class="text-5xl font-semibold pb-8">Drag'n'Drop</h1>
+
+            <div
+                class="w-full max-w-2xl h-auto aspect-video flex justify-evenly items-center border-2 border-slate-100 rounded-md"
+            >
+                <div
+                    data-order="1"
+                    draggable="true"
+                    class="w-1/4 h-auto aspect-square flex justify-center items-center text-2xl bg-slate-800 cursor-grab rounded-md transition"
+                >
+                    1
+                </div>
+                <div
+                    data-order="2"
+                    draggable="true"
+                    class="w-1/4 h-auto aspect-square flex justify-center items-center text-2xl bg-slate-800 cursor-grab rounded-md transition"
+                >
+                    2
+                </div>
+                <div
+                    data-order="3"
+                    draggable="true"
+                    class="w-1/4 h-auto aspect-square flex justify-center items-center text-2xl bg-slate-800 cursor-grab rounded-md transition"
+                >
+                    3
+                </div>
+            </div>
+
+            <div class="area w-full max-w-2xl h-auto my-8 flex">
+                <div
+                    id="a"
+                    data-area="1"
+                    class="w-auto aspect-square flex-1 border-2 border-slate-100 rounded-tl-md rounded-bl-md transition flex justify-center items-center"
+                ></div>
+                <div
+                    id="b"
+                    data-area="2"
+                    class="w-auto aspect-square flex-1 border-2 border-slate-100 transition flex justify-center items-center"
+                ></div>
+                <div
+                    id="c"
+                    data-area="3"
+                    class="w-auto aspect-square flex-1 border-2 border-slate-100 rounded-tr-md rounded-br-md transition flex justify-center items-center"
+                ></div>
+            </div>
+
+            <p>Created by B7Web</p>
+        </div>
+
+        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
