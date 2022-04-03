@@ -74,7 +74,7 @@ function renderOptions(index) {
 }
 
 function renderProgressBar(num) {
-    let percentage = (num / 10) * 100;
+    let percentage = (num / questions.length) * 100;
 
     progressBar.style.width = `${percentage}%`;
 }
