@@ -1,0 +1,16 @@
+{
+    "name": "ex_dragndrop",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "gits": "git switch main && git merge b7 && git push && git switch b7",
+        "tailwind": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch"
+    },
+    "keywords": [],
+    "author": "Gabriel VS Frasão <gabrielvitor.frasao@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "tailwindcss": "^3.0.23"
+    }
+}
