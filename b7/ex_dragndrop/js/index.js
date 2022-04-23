@@ -20,6 +20,8 @@ mainDiv.addEventListener("drop", drop);
 blocks.forEach((el) => {
     el.addEventListener("dragstart", dragStart);
     el.addEventListener("dragend", dragEnd);
+    el.addEventListener("touchstart", dragStart);
+    el.addEventListener("touchend", dragEnd);
 });
 
 areas.forEach((el) => {
